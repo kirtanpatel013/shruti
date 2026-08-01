@@ -10,58 +10,77 @@ body, html {
   height: 100vh;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   font-family: 'Outfit', Arial, sans-serif;
-  background-color: #252432;
+  /* Pink bow pattern theme background */
+  background: 
+    linear-gradient(135deg, rgba(254, 235, 240, 0.65), rgba(255, 240, 245, 0.75)),
+    url('./images/theme-bg.jpg') repeat center center / 320px auto;
   color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Ambient glow in background for rich aesthetic */
+/* Background floating sparkles */
 body::before {
   content: '';
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(255, 75, 110, 0.15) 0%, rgba(37, 36, 50, 0) 70%);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(255, 182, 193, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
   pointer-events: none;
+  z-index: 1;
 }
 
 /* App Container */
 #root {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1.5rem 1rem;
 }
 
-/* Centered White Card */
+/* Centered White Glass Card */
 .proposal-card {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 90%;
+  background: rgba(255, 255, 255, 0.94);
+  border: 2px solid rgba(255, 182, 193, 0.5);
+  border-radius: 24px;
+  padding: 2rem 1.8rem;
+  box-shadow: 0 15px 40px rgba(255, 120, 150, 0.18), 0 5px 15px rgba(0, 0, 0, 0.05);
+  max-width: 420px;
+  width: 92%;
   overflow: hidden;
   position: relative;
   text-align: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   z-index: 10;
+  transition: max-width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Wider card for final photo gallery */
+.proposal-card.success-card {
+  max-width: 480px;
+}
+
+/* Ribbon Bow Decorative Header Accent */
+.bow-accent {
+  display: block;
+  margin: 0 auto 0.5rem auto;
+  width: 42px;
+  height: 42px;
+  filter: drop-shadow(0 2px 4px rgba(255, 75, 110, 0.2));
 }
 
 /* Heart Container & Sparkles */
 .heart-container {
   position: relative;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 1.5rem auto;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 1.2rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,9 +88,10 @@ body::before {
 
 /* Pulsing Pink Heart */
 .pulsing-heart {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   fill: #ff4b6e;
+  filter: drop-shadow(0 4px 10px rgba(255, 75, 110, 0.3));
   animation: pulse 1.5s ease-in-out infinite;
   transform-origin: center center;
 }
@@ -90,8 +110,8 @@ body::before {
 
 /* Static Broken Gray Heart */
 .broken-heart {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   fill: #666;
 }
 
@@ -106,20 +126,20 @@ body::before {
 }
 
 .sparkle-dot.dot-1 {
-  top: 5px;
-  left: 5px;
+  top: 2px;
+  left: 2px;
   animation-delay: 0s;
 }
 
 .sparkle-dot.dot-2 {
-  top: 10px;
-  right: 5px;
+  top: 8px;
+  right: 2px;
   animation-delay: 0.33s;
 }
 
 .sparkle-dot.dot-3 {
-  bottom: 10px;
-  right: 15px;
+  bottom: 8px;
+  right: 12px;
   animation-delay: 0.66s;
 }
 
@@ -130,7 +150,7 @@ body::before {
   }
   50% {
     opacity: 1;
-    transform: scale(1.2);
+    transform: scale(1.25);
   }
   100% {
     opacity: 0;
@@ -156,10 +176,18 @@ body::before {
 
 .question-text {
   font-size: 1.35rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 2rem;
+  font-weight: 700;
+  color: #2b2b36;
+  margin-bottom: 1.5rem;
   line-height: 1.4;
+}
+
+.success-text {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ff3356;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 1px 2px rgba(255, 75, 110, 0.15);
 }
 
 /* Button Group Layout */
@@ -168,7 +196,7 @@ body::before {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 1.2rem;
   min-height: 60px;
   position: relative;
 }
@@ -178,7 +206,7 @@ body::before {
   font-family: inherit;
   font-size: 1rem;
   font-weight: 600;
-  padding: 1rem 2rem;
+  padding: 0.95rem 1.9rem;
   border-radius: 50px;
   border: none;
   cursor: pointer;
@@ -187,20 +215,20 @@ body::before {
   align-items: center;
   justify-content: center;
   user-select: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 14px rgba(255, 75, 110, 0.2);
 }
 
 /* Primary / Accept Button */
 .btn-accept {
-  background-color: #ff4b6e;
+  background: linear-gradient(135deg, #ff4b6e, #ff3356);
   color: #ffffff;
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-accept:hover {
-  background-color: #ff3356;
+  background: linear-gradient(135deg, #ff3356, #e61e43);
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(255, 75, 110, 0.35);
+  box-shadow: 0 6px 18px rgba(255, 51, 86, 0.4);
 }
 
 .btn-accept:active {
@@ -218,26 +246,26 @@ body::before {
 
 .btn-decline:hover {
   background-color: #555555;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 /* Reset Button on Rejection Screen */
 .btn-reset {
-  background-color: #ff4b6e;
+  background: linear-gradient(135deg, #ff4b6e, #ff3356);
   color: #ffffff;
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   margin-top: 1rem;
 }
 
 .btn-reset:hover {
-  background-color: #ff3356;
+  background: linear-gradient(135deg, #ff3356, #e61e43);
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(255, 75, 110, 0.35);
+  box-shadow: 0 6px 18px rgba(255, 51, 86, 0.4);
 }
 
 /* Celebration Hearts Floating Animation */
 .celebration-heart {
-  position: absolute;
+  position: fixed;
   bottom: -40px;
   pointer-events: none;
   z-index: 20;
@@ -253,7 +281,146 @@ body::before {
     opacity: 0.9;
   }
   100% {
-    transform: translateY(-550px) rotate(360deg);
+    transform: translateY(-110vh) rotate(360deg);
     opacity: 0;
   }
+}
+
+/* Polaroid Photo Gallery Styling for Final Screen */
+.polaroid-container {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.polaroid-card {
+  background: #ffffff;
+  padding: 10px 10px 16px 10px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(255, 75, 110, 0.1);
+  border: 1px solid rgba(255, 182, 193, 0.4);
+  transform: rotate(-1.5deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  width: 100%;
+  max-width: 320px;
+  position: relative;
+}
+
+.polaroid-card:hover {
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: 0 15px 30px rgba(255, 75, 110, 0.25);
+}
+
+/* Tape decoration at top of polaroid */
+.polaroid-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 24px;
+  background: rgba(255, 235, 238, 0.85);
+  border: 1px dashed rgba(255, 120, 150, 0.4);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  z-index: 2;
+}
+
+.polaroid-img-wrapper {
+  width: 100%;
+  height: 280px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fdf2f4;
+  position: relative;
+}
+
+.polaroid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.polaroid-card:hover .polaroid-img {
+  transform: scale(1.04);
+}
+
+.polaroid-caption {
+  font-family: 'Outfit', cursive, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ff3356;
+  margin-top: 10px;
+  letter-spacing: 0.3px;
+}
+
+/* Thumbnail Navigation Dots/Cards */
+.photo-thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 0.8rem;
+}
+
+.thumb-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  background: #fff;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.thumb-btn:hover {
+  transform: translateY(-2px);
+}
+
+.thumb-btn.active {
+  border-color: #ff4b6e;
+  box-shadow: 0 0 10px rgba(255, 75, 110, 0.4);
+  transform: scale(1.1);
+}
+
+.thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Nav arrows for gallery */
+.gallery-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 0.4rem;
+}
+
+.nav-arrow {
+  background: rgba(255, 240, 245, 0.9);
+  border: 1px solid rgba(255, 75, 110, 0.3);
+  color: #ff3356;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.nav-arrow:hover {
+  background: #ff4b6e;
+  color: #fff;
+  transform: scale(1.1);
 }
