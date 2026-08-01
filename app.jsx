@@ -8,24 +8,24 @@ function ProposalApp() {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
   // Photos array provided by the user
-  const photos = [
-    {
-      src: './images/photo1.jpg',
-      caption: 'Us forever 💑'
-    },
-    {
-      src: './images/photo2.jpg',
-      caption: 'Prettiest girl in the world ✨'
-    },
-    {
-      src: './images/photo3.jpg',
-      caption: 'My favorite smile 🥰'
-    },
-    {
-      src: './images/photo4.jpg',
-      caption: 'Cute & absolute perfection 💖'
-    }
-  ];
+ const photos = [
+  {
+    src: './photo1.jpg',
+    caption: 'Us forever 💑'
+  },
+  {
+    src: './photo2.jpg',
+    caption: 'Prettiest girl in the world ✨'
+  },
+  {
+    src: './photo3.jpg',
+    caption: 'My favorite smile 🥰'
+  },
+  {
+    src: './photo4.jpg',
+    caption: 'Cute & absolute perfection 💖'
+  }
+];
 
   // Data for multi-step question flow
   const questions = {
