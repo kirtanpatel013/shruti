@@ -1,0 +1,259 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Outfit', Arial, sans-serif;
+  background-color: #252432;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ambient glow in background for rich aesthetic */
+body::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 75, 110, 0.15) 0%, rgba(37, 36, 50, 0) 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* App Container */
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centered White Card */
+.proposal-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+/* Heart Container & Sparkles */
+.heart-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pulsing Pink Heart */
+.pulsing-heart {
+  width: 100px;
+  height: 100px;
+  fill: #ff4b6e;
+  animation: pulse 1.5s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Static Broken Gray Heart */
+.broken-heart {
+  width: 100px;
+  height: 100px;
+  fill: #666;
+}
+
+/* Gold Sparkle Dots */
+.sparkle-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  fill: #ffd700;
+  pointer-events: none;
+  animation: sparkleFade 1s ease-in-out infinite;
+}
+
+.sparkle-dot.dot-1 {
+  top: 5px;
+  left: 5px;
+  animation-delay: 0s;
+}
+
+.sparkle-dot.dot-2 {
+  top: 10px;
+  right: 5px;
+  animation-delay: 0.33s;
+}
+
+.sparkle-dot.dot-3 {
+  bottom: 10px;
+  right: 15px;
+  animation-delay: 0.66s;
+}
+
+@keyframes sparkleFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+/* Question Content Container & Fade-in Animation */
+.step-container {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.question-text {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+/* Button Group Layout */
+.buttons-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  min-height: 60px;
+  position: relative;
+}
+
+/* Common Pill Button Base */
+.btn {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Primary / Accept Button */
+.btn-accept {
+  background-color: #ff4b6e;
+  color: #ffffff;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-accept:hover {
+  background-color: #ff3356;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 75, 110, 0.35);
+}
+
+.btn-accept:active {
+  transform: scale(0.98);
+}
+
+/* Decline Button */
+.btn-decline {
+  background-color: #666666;
+  color: #ffffff;
+  transition: transform 0.25s ease-out, background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 5;
+}
+
+.btn-decline:hover {
+  background-color: #555555;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Reset Button on Rejection Screen */
+.btn-reset {
+  background-color: #ff4b6e;
+  color: #ffffff;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-reset:hover {
+  background-color: #ff3356;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 75, 110, 0.35);
+}
+
+/* Celebration Hearts Floating Animation */
+.celebration-heart {
+  position: absolute;
+  bottom: -40px;
+  pointer-events: none;
+  z-index: 20;
+  animation: floatUpRotate linear forwards;
+}
+
+@keyframes floatUpRotate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-550px) rotate(360deg);
+    opacity: 0;
+  }
+}
