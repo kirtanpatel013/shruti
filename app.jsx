@@ -40,7 +40,7 @@ function ProposalApp() {
       declineText: "Nope"
     },
     3: {
-      title: "Group hug? 🤗",
+      title: "Give me a hug? 🤗",
       acceptText: "Bring it in!",
       declineText: "Pass"
     }
