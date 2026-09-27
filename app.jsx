@@ -18,7 +18,7 @@ function ProposalApp() {
     caption: 'Prettiest girl in the world ✨'
   },
   {
-    src: './photo3.jpeg',
+    src: './photo3.jpg',
     caption: 'My favorite smile 🥰'
   },
   {
