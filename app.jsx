@@ -15,7 +15,7 @@ function ProposalApp() {
   },
   {
     src: './photo2.jpg',
-    caption: 'Prettiest girl in the world ✨'
+    caption: 'best boyfriend in the world ✨'
   },
   {
     src: './photo3.jpg',
@@ -30,7 +30,7 @@ function ProposalApp() {
   // Data for multi-step question flow
   const questions = {
     1: {
-      title: "Will you be my girlfriend? 💕",
+      title: "Will you be my boyfriend ? 💕",
       acceptText: "Yes, always!",
       declineText: "Nah"
     },
@@ -213,7 +213,7 @@ function ProposalApp() {
         {isSuccess && (
           <>
             <h2 className="success-text">
-              Yay! You're officially my girlfriend! 💛
+              Yay! You're officially my boyfriend! 💛
             </h2>
 
             {/* Interactive Polaroid Photo Gallery */}
