@@ -6,15 +6,15 @@ const MAX_DODGES = 5;
 // Put your 4 photos in the same folder as index.html
 const photos = [
   { src: './photo1.jpg',  caption: 'Us forever 🧸' },
-  { src: './photo2.jpg',  caption: 'Best boyfriend in the world 🎀' },
+  { src: './photo2.jpg',  caption: 'Best husband in the world 🎀' },
   { src: './photo3.jpg',  caption: 'My favorite smile 🥰' },
   { src: './photo4.jpeg', caption: 'Cute & absolute perfection ❤️' }
 ];
 
 const questions = {
-  1: { title: "Will you be my boyfriend? 💕", acceptText: "Yes, always!", declineText: "Nah" },
-  2: { title: "Wanna go on a date? 🎉",       acceptText: "Absolutely!",  declineText: "Nope" },
-  3: { title: "Group hug? 🤗",                acceptText: "Bring it in!", declineText: "Pass" }
+  1: { title: "today is our anniversary ? 💕", acceptText: "Yes", declineText: "Nah" },
+  2: { title: "so go for big celebration ? 🎉",       acceptText: "Absolutely!",  declineText: "Nope" },
+  3: { title: "give me a hug ? 🤗",                acceptText: " yah of course ", declineText: "no" }
 };
 
 function ProposalApp() {
