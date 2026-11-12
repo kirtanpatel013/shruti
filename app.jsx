@@ -131,7 +131,7 @@ function ProposalApp() {
 
         {isSuccess && (
           <>
-            <h2 className="success-text">Yay! You're officially my boyfriend! 💛</h2>
+            <h2 className="success-text">Yay! You're officially husband ! 💛</h2>
             <div className="polaroid-container">
               <div className="polaroid-card">
                 <div className="polaroid-img-wrapper">
