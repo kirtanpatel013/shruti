@@ -6,8 +6,8 @@ const MAX_DODGES = 5;
 // Put your 4 photos in the same folder as index.html
 const photos = [
   { src: './photo1.jpg.jpeg',  caption: 'Us forever 🧸' },
-  { src: './photo2.jpg.jpeg',  caption: 'Best husband in the world 🎀' },
-  { src: './photo3.jpg.jpeg',  caption: 'My favorite smile 🥰' },
+  { src: './photo2.jpg.jpeg',  caption: 'i will remember this kiss 😘' },
+  { src: './photo3.jpg.jpeg',  caption: 'let's have some fum in the rain 🥰' },
   { src: './photo4.jpgg', caption: 'Cute & absolute perfection ❤️' }
 ];
 
