@@ -5,10 +5,10 @@ const MAX_DODGES = 5;
 
 // Put your 4 photos in the same folder as index.html
 const photos = [
-  { src: './photo1.jpg',  caption: 'Us forever 🧸' },
-  { src: './photo2.jpg',  caption: 'Best husband in the world 🎀' },
-  { src: './photo3.jpg',  caption: 'My favorite smile 🥰' },
-  { src: './photo4.jpeg', caption: 'Cute & absolute perfection ❤️' }
+  { src: './photo1.jpg.jpeg',  caption: 'Us forever 🧸' },
+  { src: './photo2.jpg.jpeg',  caption: 'Best husband in the world 🎀' },
+  { src: './photo3.jpg.jpeg',  caption: 'My favorite smile 🥰' },
+  { src: './photo4.jpgg', caption: 'Cute & absolute perfection ❤️' }
 ];
 
 const questions = {
