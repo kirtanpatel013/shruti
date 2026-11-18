@@ -7,8 +7,8 @@ const MAX_DODGES = 5;
 const photos = [
   { src: './photo2.jpg.jpeg',  caption: 'a little kiss, a lot of love 😘' },
   { src: './photo3.jpg.jpeg',  caption: 'under one umbrella ☔ ' },
-  { src: './photo3.jpg.jpeg',  caption: 'lets have some fum in the rain 🥰' },
-  { src: './photo4.jpgg', caption: 'Cute & absolute perfection ❤️' }
+  { src: './shruti.jpg.jpeg',  caption: 'together feels right 🥰' },
+  { src: './shruti2.jpg.jpeg', caption: 'lost in your eyes 👀' }
 ];
 
 const questions = {
